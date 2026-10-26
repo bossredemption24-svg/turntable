@@ -79,7 +79,8 @@
       {
         "provider": "github",
         "owner": "github.com/bossredemption24-svg",
-        "repo": "turntable"
+        "repo": "turntable",
+        "releaseType": "release"
       }
     ]
   },
