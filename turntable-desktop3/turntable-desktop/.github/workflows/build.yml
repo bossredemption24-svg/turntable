@@ -5,6 +5,9 @@ on:
     tags: ['v*']
 permissions:
   contents: write
+defaults:
+  run:
+    working-directory: turntable-desktop
 jobs:
   build:
     strategy:
@@ -26,12 +29,12 @@ jobs:
         with:
           name: turntable-${{ matrix.os }}
           path: |
-            dist/*.exe
-            dist/*.dmg
-            dist/*.AppImage
-            dist/*.deb
+            turntable-desktop/dist/*.exe
+            turntable-desktop/dist/*.dmg
+            turntable-desktop/dist/*.AppImage
+            turntable-desktop/dist/*.deb
       - uses: actions/upload-artifact@v4
         if: runner.os == 'Windows'
         with:
           name: turntable-windows-unpacked
-          path: dist/win-unpacked
+          path: turntable-desktop/dist/win-unpacked
